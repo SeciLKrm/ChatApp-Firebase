@@ -5,10 +5,15 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
+
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+/*
+ * uygulamanın hangi firebase projesine
+ * bağlı olduğu bilgileri içeren ayar objesi
+ */
 const firebaseConfig = {
   apiKey: "AIzaSyCmg2Q9syAYHkxOJP-HxSrjUfOkOimu5j4",
   authDomain: "chatt-6c7ce.firebaseapp.com",
@@ -21,7 +26,14 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
+/*
+ * yetkilendirme / storage / veritabanı gibi
+ * yapıların kurulum fonksiyonları çağırıp
+ * uygulamamız hakkında bilgiler içerien app
+ * objesine gönderme
+ */
 export const auth = getAuth(app);
+// google yetkilendirmesi için gerekli kurulum
 export const provider = new GoogleAuthProvider();
+// firestore'un uyguluma içinde kullanmak için kurlumu
 export const db = getFirestore(app);

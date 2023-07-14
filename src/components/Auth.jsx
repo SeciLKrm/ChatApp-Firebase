@@ -3,6 +3,13 @@ import { auth, provider } from "../firebase/firebaseConfig";
 
 const Auth = ({ setIsAuth }) => {
   const handleClick = () => {
+    /*
+     * kullanıcın google hesabını seçmesine yarayan
+     * bir penecere açar
+     * kullanıcı hesabını seçtiğinde
+     * veritabanında yoksa onu ekler varsa giriş tarihini günceller
+     * sonuç olarak bize kullanıcı hakkında bilgileri içeren cevap döndürürr
+     */
     signInWithPopup(auth, provider).then((res) => {
       console.log(res);
       // kullanıcı giriş yaptığına dair kanıtı içeren
